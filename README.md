@@ -16,11 +16,7 @@ reader.setMarker('"')
 CSV csv = reader.parse(file_name);
 CSV csv = reader.parse(file_data);
 
-csv.columns()
 csv.lines()
-
-csv.column(0)
-csv.column("name")
 
 csv.line(0).string();
 
