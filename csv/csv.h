@@ -53,6 +53,18 @@ namespace csv {
 
 		Data& line(int index);
 		vector<Data> lines();
+
+		vector<vector<string>> columns();
+	};
+
+	class CSVReader {
+	private:
+	public:
+	};
+
+	class CSVWriter {
+	private:
+	public:
 	};
 
 }

@@ -80,4 +80,17 @@ namespace csv {
 		return vec_data;
 	}
 
+	vector<vector<string>> CSV::columns() {
+		vector<vector<string>> cols;
+		for (int x = 0; x < schema_len; x++) {
+			cols.push_back(vector<string>());
+		}
+		for (auto col : vec_data) {
+			for (int i = 0; i < schema_len; i++) {
+				cols[i].push_back(col.column(i));
+			}
+		}
+		return cols;
+	}
+
 }

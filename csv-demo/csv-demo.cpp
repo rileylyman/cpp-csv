@@ -12,6 +12,8 @@ int main()
 	csv.insert_data("David,13,Alec");
 	csv.insert_data("David,13,Alec");
 	
-	vector<vector<string>> cols;
-	csv.columns(cols);
+	cout << csv.columns().size() << endl;
+	cout << csv.columns().at(0).at(0);
+
+	return 0;
 }
