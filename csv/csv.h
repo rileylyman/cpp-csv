@@ -31,6 +31,8 @@ namespace csv {
 		
 		void setData(vector<string> data); // debug function tbh
 
+		string asString();
+
 		string& column(int index);
 
 		friend ostream& operator<<(ostream& stream, Data& data);

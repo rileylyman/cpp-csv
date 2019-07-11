@@ -8,10 +8,13 @@ int main()
 {
 	CSV csv;
 	csv.setSchema("Name,Age,Friend");
+
 	csv.insert_data("David,13,Alec");
 	csv.insert_data("David,13,Alec");
 	csv.insert_data("David,13,Alec");
 	
+	cout << csv.lines().at(2) << endl;
+
 	cout << csv.columns().size() << endl;
 	cout << csv.columns().at(0).at(0);
 

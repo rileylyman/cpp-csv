@@ -15,6 +15,17 @@ namespace csv {
 		this->data = data;
 	}
 
+	string Data::asString() {
+		string val;
+		int i = 0;
+		for (i = 0; i < schema_len - 1; i++) {
+			val += column(i);
+			val += ", ";
+		}
+		val += column(i);
+		return val;
+	}
+
 	string& Data::column(int index) {
 		if (index < 0) { // adds pythonic style indexing
 			index = schema_len + index;
@@ -26,13 +37,7 @@ namespace csv {
 	}
 
 	ostream& operator<<(ostream& stream, Data& data) {
-		int i = 0;
-		for (i = 0; i < data.schema_len - 1; i++) {
-			stream << data.column(i);
-			stream << ", ";
-		}
-		stream << data.column(i);
-		return stream;
+		return stream << data.asString();
 	}
 
 	CSV::CSV() {

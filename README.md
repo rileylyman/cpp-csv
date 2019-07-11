@@ -16,12 +16,18 @@ reader.setMarker('"')
 CSV csv = reader.parse(file_name);
 CSV csv = reader.parse(file_data);
 
-csv.lines()
+csv.lines() // a vector<Data> 
+//The Data class is just a wrapper for the inner vector<string> object. You can think of it to be an extension of a vector<string> that allows
+a named access of .at(index) with .column()
 
-csv.line(0).string();
+csv.line(0).asString();
+
+cout << csv.line(0) // you can cout a Data object 
 
 csv.line(0).column(0).set(value)
 csv.line(0).column(0).get()
+
+csv.columns() // a vector<vector<string>>
 
 ```
 
